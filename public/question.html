@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What Should We Eat Today?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-sans">
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul class="nava">
+                <li><a href="#">Find by Cuisine</a></li>
+                <li><a href="#">Find by Diet Restriction</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="flex-grow">
+            <a href="index.html" class="tle">What should we eat today?</a>
+        </div>
+    </header>
+    
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div id="quiz-container">
+            <!-- Question 1 -->
+            <div id="question-1" class="question">
+                <h2 class="question-title">What kind of meal you're in the mood for?</h2>
+                <div class="choice-grid">
+                    <button class="meal-choice" data-choice="Western">Western</button>
+                    <button class="meal-choice" data-choice="Chinese">Chinese</button>
+                    <button class="meal-choice" data-choice="Japanese">Japanese</button>
+                    <button class="meal-choice" data-choice="Caribbean">Caribbean</button>
+                    <button class="meal-choice" data-choice="Italian">Italian</button>
+                    <button class="meal-choice" data-choice="Spanish">Spanish</button>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div id="question-2" class="question hidden">
+                <h2 class="question-title">Diet Restriction?</h2>
+                <div class="choice-grid">
+                    <button class="diet-choice" data-choice="No Diet Restriction">No Diet Restriction</button>
+                    <button class="diet-choice" data-choice="low-fat">Low Calorie</button>
+                    <button class="diet-choice" data-choice="Vegetarian">Vegetarian</button>
+                    <button class="diet-choice" data-choice="low-carb">Keto</button>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div id="question-3" class="question hidden">
+                <h2 class="question-title">Any specific dish type?</h2>
+                <div class="choice-grid">
+                    <button class="dish-choice" data-choice="Big meal">Big meal</button>
+                    <button class="dish-choice" data-choice="Snacking">Snacking</button>
+                    <div class="full-width">
+                        <button class="dish-choice" data-choice="Dessert">Dessert</button>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Result -->
+            <!-- Result -->
+            <div id="result" class="result-container hidden">
+                <h2 class="zero">We should eat......</h2>
+                <div class="food-result">
+                    <div class="food-image-container">
+                        <img id="food-image-img" src="img/image.png" alt="Food Image" class="food-image">
+                        <div class="food-text">
+                            <h3 id="food-suggestion">Seafood Paella</h3>
+                            <p id="cuisine-type">Spanish Cuisine</p>
+                        </div>
+                        <a class="redo-button" id="redo-quiz" href="index.html">Redo the Quiz</a>
+                    </div>
+                </div>
+            </div>
+            <div id="recipeResult" style="text-align: center; margin-top: 20px;">
+                <div id="recipeDetails"></div>
+            
+                <div id="triviaSection" style="margin-top: 20px;">
+                    <h3>🍴 Fun Food Fact</h3>
+                    <div id="trivia" style="font-style: italic; color: #666;"></div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

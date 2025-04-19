@@ -1,0 +1,261 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* Header */
+  header {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Menu Styles */
+  .nava {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nava li {
+    display: flex;
+  }
+  
+  .nava li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .nava li a:hover {
+    text-decoration: none;
+  }
+  
+  /* Flexbox Centering for Title */
+  .flex-grow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tle {
+    background-color: black;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Main Content */
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('img/wallpaper.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .main-heading {
+    font-size: 6.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: rgb(0, 0, 0);
+  }
+  
+  .cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cta-button {
+    background-color: #FF0000;
+    color: rgb(0, 0, 0);
+    padding: 1.5rem 3rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    display: flex;
+    justify-self: flex-end;
+    margin-left: auto; 
+  }
+  
+  
+  /* Footer */
+  .footer {
+    margin-top: 3.5rem;
+    padding: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .main-heading {
+        font-size: 4rem;
+    }
+  
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-heading {
+        font-size: 3rem;
+    }
+  
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+  }
+  header {
+    padding-left: 2rem; /* px-8 */
+    padding-right: 2rem; /* px-8 */
+    padding-top: 1rem; /* py-4 */
+    padding-bottom: 1rem; /* py-4 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 2rem; /* space-x-8 */
+    font-size: 1rem; /* text-base */
+    justify-content: flex-end; /* justify-end */
+    font-weight: 600; /* font-semibold */
+    list-style: none; /* Remove bullets */
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline; /* hover:underline */
+    color: #FF0000;
+  }
+  
+  /* Flexbox Centering for Title */
+  header .flex-grow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  header .bg-black {
+    background-color: black;
+  }
+  
+  header .text-white {
+    color: rgb(0, 0, 0);
+  }
+  
+  header .text-xs {
+    font-size: 0.75rem; /* text-xs */
+  }
+  
+  header .px-3 {
+    padding-left: 0.75rem; /* px-3 */
+    padding-right: 0.75rem; /* px-3 */
+  }
+  
+  header .py-1 {
+    padding-top: 0.25rem; /* py-1 */
+    padding-bottom: 0.25rem; /* py-1 */
+  }
+  
+  header .h-\[80px\] {
+    height: 80px;
+  }
+  
+  header .w-\[80px\] {
+    width: 80px;
+  }
+  
+  header .pt-5 {
+    padding-top: 1.25rem; /* pt-5 */
+    margin-bottom: 50px;
+  
+  }
+  /* Navbar styles */
+  nav {
+    display: flex;
+    justify-content: flex-end; /* Align the entire nav bar to the right */
+    width: 100%;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* Align items to the right */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  .nava {
+    display: flex;
+    gap: 2rem; /* Space between items */
+    justify-content: flex-end; /* Align items to the right */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Make sure it takes full width */
+  }
+  
+  .nava li {
+    display: flex;
+    justify-content: flex-end; /* Align text inside li to the right */
+  }
+  
+  .nava li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+  }
+  .tle{
+    background-color: black;
+    color: white;
+    padding: 10px 10px;
+    height: 80px;
+    width: 80px;
+    font-size: 14px;
+  }
+  a {
+    color: white; 
+    text-decoration: none; 
+  }
+  

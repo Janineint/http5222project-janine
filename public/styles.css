@@ -1,0 +1,538 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Header */
+  .header {
+    padding: 20px;
+    text-align: right;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+  }
+  
+  .menu-link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .menu-link:hover {
+    text-decoration: none;
+    color: #FF0000;
+  }
+  
+  /* Main Content */
+  .main-content {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+  }
+  
+  #quiz-container {
+    text-align: center;
+  }
+  
+  .question {
+    margin-bottom: 30px;
+  }
+  
+  .question-title {
+    font-size: 60px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+  }
+  
+  /* Grid for buttons */
+  .choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .full-width {
+    grid-column: span 2;
+  }
+  
+  button {
+    padding: 10px 40px;
+    background-color: #FF0000;
+    color: white;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 18px;
+  }
+  
+  button:hover {
+    background-color: white; 
+    color: red; 
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Result Section */
+  .result-container {
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  .food-result {
+    position: relative;
+    text-align: center;
+  }
+  
+  .food-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .food-image {
+    width: 2080px;  /* Make the image full-width */
+    height: 800px; /* Increase image height only for the result */
+    object-fit: cover; /* Maintain the aspect ratio */
+    border-radius: 15px;
+    overflow: hidden; /* Hide overflow on smaller screens */
+  }
+  
+  .food-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    z-index: 10;
+  }
+  
+  #food-suggestion {
+    font-size: 2.5rem;
+  }
+  
+  #cuisine-type {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .redo-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 50px;
+    background-color: #FF0000;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    margin-bottom: 100px;
+    width: 300px;
+  }
+  
+  .zero {
+    margin-bottom: 20px;
+    font-size: 50px;
+  }
+  /* Mobile Responsive Styles */
+  @media (max-width: 768px) {
+    .question-title {
+      font-size: 36px;
+      padding-bottom: 15px;
+      margin-top: 10px; /* ลดระยะห่างด้านบน */
+    }
+  
+    button {
+      padding: 10px 30px;
+      font-size: 18px;
+      border-radius: 25px;
+      font-weight: 600;
+    }
+  
+    #food-suggestion {
+      font-size: 2.2rem;
+      line-height: 1.4;
+      padding: 10px;
+    }
+  
+    #cuisine-type {
+      font-size: 1.1rem;
+      margin-top: 5px;
+    }
+  
+    .food-image {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  
+    .redo-button {
+      padding: 14px 45px;
+      font-size: 1.1rem;
+      width: 260px;
+      margin-bottom: 50px;
+      border-radius: 30px;
+      margin-top: 10px; /
+    }
+  
+    .zero {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Smaller screen (mobile) adjustments */
+  @media (max-width: 480px) {
+    .question-title {
+      font-size: 28px;
+      padding-bottom: 12px;
+      margin-top: 8px; 
+    }
+  
+    button {
+      padding: 8px 25px;
+      font-size: 16px;
+      border-radius: 25px;
+    }
+  
+    #food-suggestion {
+      font-size: 1.8rem;
+      padding: 8px;
+      line-height: 1.3;
+    }
+  
+    #cuisine-type {
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+  
+    .food-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+  
+    .redo-button {
+      padding: 12px 35px;
+      font-size: 1rem;
+      width: 220px;
+      margin-bottom: 30px;
+      border-radius: 30px;
+      margin-top: 8px; 
+    }
+  
+    .zero {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+  }
+  /* Header Styles */
+  header {
+    padding-left: 2rem; /* px-8 */
+    padding-right: 2rem; /* px-8 */
+    padding-top: 1rem; /* py-4 */
+    padding-bottom: 1rem; /* py-4 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 120px;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 2rem; /* space-x-8 */
+    font-size: 1rem; /* text-base */
+    justify-content: flex-end; /* justify-end */
+    font-weight: 600; /* font-semibold */
+    list-style: none; /* Remove bullets */
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: none;
+    color: #FF0000;
+  }
+  
+  /* Flexbox Centering for Title */
+  header .flex-grow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  header .bg-black {
+    background-color: black;
+  }
+  
+  header .text-white {
+    color: white;
+  }
+  
+  header .text-xs {
+    font-size: 0.75rem; /* text-xs */
+  }
+  
+  header .px-3 {
+    padding-left: 0.75rem; /* px-3 */
+    padding-right: 0.75rem; /* px-3 */
+  }
+  
+  header .py-1 {
+    padding-top: 0.25rem; /* py-1 */
+    padding-bottom: 0.25rem; /* py-1 */
+  }
+  
+  header .h-\[80px\] {
+    height: 80px;
+  }
+  
+  header .w-\[80px\] {
+    width: 80px;
+  }
+  
+  header .pt-5 {
+    padding-top: 1.25rem; /* pt-5 */
+    margin-bottom: 50px;
+  
+  }
+  
+  /* Mobile Navigation Adjustment */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column; /* Make the menu stack vertically on small screens */
+      gap: 1rem; /* Reduce space between items */
+      justify-content: center; /* Center the links */
+    }
+  
+    .flex-grow {
+      justify-content: flex-start; /* Align title closer to the top on small screens */
+    }
+  }
+  
+  /* Smallest screen (mobile) adjustments */
+  @media (max-width: 480px) {
+    header {
+      padding-left: 1rem; /* Adjust left padding for smaller screens */
+      padding-right: 1rem; /* Adjust right padding for smaller screens */
+    }
+  
+    nav ul {
+      display: flex;
+      gap: 2rem; /* space-x-8 */
+      font-size: 1rem; /* text-base */
+      justify-content: flex-end; 
+      font-weight: 600; /* font-semibold */
+      list-style: none; 
+      padding-left: 0;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem; 
+        justify-content: flex-end; 
+      }
+    }
+      
+  
+    .bg-black {
+      font-size: 0.6rem; /* Adjust text size for smaller devices */
+      padding-left: 0.5rem; /* Reduce padding */
+      padding-right: 0.5rem; /* Reduce padding */
+      height: 60px; /* Adjust the height */
+      width: 60px; /* Adjust the width */
+    }
+  }
+  /* Menu styles */
+  .nava {
+    display: flex;
+    gap: 2rem; /* Space between items */
+    justify-content: flex-end; /* Align items to the right */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Make sure it takes full width */
+  }
+  
+  .nava li {
+    display: flex;
+    justify-content: flex-end; /* Align text inside li to the right */
+  }
+  
+  .nava li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+  }
+  
+  /* Navbar styles */
+  nav {
+    display: flex;
+    justify-content: flex-end; /* Align the entire nav bar to the right */
+    width: 100%;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* Align items to the right */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: none;
+    color: #FF0000;
+  }
+  
+  /* Center the flex-grow content */
+  .flex-grow {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-grow: 1; /* Allow the flex-grow to take remaining space */
+    text-align: center;
+  }
+  
+  .bg-black {
+    background-color: black;
+    color: white;
+    font-size: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.25rem; /* Adjust padding */
+  }
+  
+  
+  
+  
+  /* Flexbox center for the title */
+  .flex-grow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .bg-black {
+    background-color: black;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .text-xs {
+    font-size: 0.75rem;
+  }
+  
+  .px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  
+  .pt-5 {
+    padding-top: 1.25rem;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .nava {
+      flex-direction: column; /* Stack menu items vertically on mobile */
+      align-items: center; /* Center-align items on mobile */
+      gap: 1rem;
+    }
+  
+    .flex-grow {
+      justify-content: flex-start; /* Align the title closer to the top */
+    }
+  
+    .bg-black {
+      font-size: 0.6rem; /* Adjust text size for mobile */
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      height: 60px; /* Adjust height */
+      width: 60px; /* Adjust width */
+    }
+  
+    .nava li {
+      justify-content: center; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nava {
+      gap: 0.5rem; 
+    }
+  
+    .nava li a {
+      font-size: 1rem; 
+    }
+  
+    .bg-black {
+      font-size: 0.5rem; 
+      height: 50px; 
+      width: 50px; 
+    }
+  }
+  
+  .tle{
+    background-color: black;
+    color: white;
+    padding: 10px 10px;
+    height: 80px;
+    width: 80px;
+    font-size: 14px;
+  }
+  a {
+    color: white; 
+    text-decoration: none; 
+  }
+  
